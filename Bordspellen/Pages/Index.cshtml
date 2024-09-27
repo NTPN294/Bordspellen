@@ -9,7 +9,32 @@
     <div class="containerBanner" >
        <img class="banner" src="~/lib/Images/people2.jpeg" />
     </div>
-    <div class="containerItems">
-        aa
+
+    <div class="containerContent">
+
+        <div class="containerEventBlock">
+            <h2>Aankomende evenementen</h2>
+            </br>
+            <div class="containerItems">
+                @foreach (Event ev in Model.Events)
+                {
+                    <div class="containerItem">
+                        <img style="height:150px" src="~/lib/images/test.png"/>
+                        <h3>@ev.Host</h3>
+                        <p>@ev.Date.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("nl-NL"))</p>
+                    </div>
+                }
+            </div>
+            </br>
+            <p class="textGreen">Meer Evenementen</p>
+
+        </div>
+
+        <div class="containerCreateBlock">
+            <h2>Maak je eigen evenement aan!</h2>
+            <button class="roundButton">Nu aanmaken</button>
+        </div>
+      
     </div>
+    
 </div>

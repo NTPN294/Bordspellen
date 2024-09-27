@@ -10,15 +10,18 @@
 </head>
 <body>
     <header>
-        
+
         <nav class="navBar">
             <div class="navContent">
-                <p>Logo</p>
+                <a href="~/">
+                    <img style="height: 100px" src="lib/Images/logo.png" alt="Logo" />
+                </a>
                 <p>Evenementen</p>
                 <p>Catagoriën</p>
                 <p>Info</p>
 
-                <p class="right-align">zoek</p>
+                <input style="transform:translateY(-5px)" class="roundSearch" type="text" />
+                <img style="height:25px" src="lib/Images/search.png" />
                 <p>Inloggen</p>
 
             </div>
@@ -26,13 +29,13 @@
 
     </header>
     <div class="main">
-            @RenderBody()
-      
+        @RenderBody()
+
     </div>
 
     <footer class="footerBar">
         <div class="footerContent">
-           <p>footer</p>
+            <p>footer</p>
         </div>
     </footer>
 
