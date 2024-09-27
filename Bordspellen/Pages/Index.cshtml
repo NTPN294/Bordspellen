@@ -19,7 +19,7 @@
                 @foreach (Event ev in Model.Events)
                 {
                     <div class="containerItem">
-                        <img style="height:150px" src="~/lib/images/test.png"/>
+                        <img class="eventImage" src="~/lib/images/test.png" />
                         <h3>@ev.Host</h3>
                         <p>@ev.Date.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("nl-NL"))</p>
                     </div>
