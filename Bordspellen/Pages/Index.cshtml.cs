@@ -6,6 +6,8 @@ namespace Bordspellen.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public List<Event> Events { get; set; }
+
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -13,7 +15,6 @@ namespace Bordspellen.Pages
         }
 
 
-        public List<Event> Events { get; set; }
         public void OnGet()
         {
             Events = new List<Event>

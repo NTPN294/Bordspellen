@@ -1,0 +1,64 @@
+﻿@page
+@model Bordspellen.Pages.AccountCreationModel
+@{
+}
+
+<div class="containerBody">
+    <div class="login">
+        <table class="accountTable">
+            <tr>
+                <td><h2 style="font-weight:bold">Account aanmaken</h2></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="email" id="email"/></td>
+            </tr>
+            <tr>
+                <td>Wachtwoord</td>
+                <td><input type="password" id="password"/></td>
+            </tr>
+            <tr>
+                <td>Wachtwoord herhalen</td>
+                <td><input type="password" id="password2"/></td>
+            </tr>
+            <tr>
+                <td>Geslacht</td>
+                <td>
+                    <select name="geslacht" id="geslacht">
+                        @foreach(var gender in Model.Genders)
+                        {
+                            <option value="@gender">@gender</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Geboorte datum</td>
+                <td><input type="date" id="birthDate"/></td>
+            </tr>
+            <tr>
+                <td>Postcode</td>
+                <td><input type="text" id="postcode" /></td>
+            </tr>
+            <tr>
+                <td>Huisnummer</td>
+                <td><input type="number" id="huisnummer" /></td>
+            </tr>
+            <tr>
+                <td>Straat</td>
+                <td><input type="text" id="straat" /></td>
+            </tr>
+            <tr>
+                <td>Stad</td>
+                <td><input type="text" id="stad" /></td>
+            </tr>
+
+
+            <tr>
+                <td> <a href="Login" style="text-decoration:none"><p class="textGreen">Terug</p></a></td>
+                <td><button class="accountButton">Account aanmaken</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -6,6 +6,15 @@ public class User
     public String email { get; set; }
     public String password { get; set; }
 
+    public Gender Gender { get; set; }
+
+}
+
+public enum Gender
+{
+    Man,
+    Vrouw,
+    Anders,
 }
 
 
