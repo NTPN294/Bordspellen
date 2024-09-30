@@ -1,0 +1,81 @@
+﻿@page
+@model Bordspellen.Pages.SearchModel
+@{
+}
+
+<div class="search">
+
+
+    <div class="searchOptions smoothContentEdges">
+        <h2>Filters</h2>
+        </br>
+
+        <div>
+            <p style="font-weight:bold">Leeftijd</p>
+            <label class="custom-checkbox">
+                <input type="radio" id="alle" name="ageGroup" value="Alle" checked>
+                <span class="checkbox"></span>
+                Alle
+            </label>
+            <br />
+            <label class="custom-checkbox">
+                <input type="radio" id="16to18" name="ageGroup" value="16-18">
+                <span class="checkbox"></span>
+                16-18
+            </label>
+            <br />
+            <label class="custom-checkbox">
+                <input type="radio" id="18plus" name="ageGroup" value="18plus">
+                <span class="checkbox"></span>
+                18+
+            </label>
+        </div>
+
+        </br>
+
+        <div>
+            <p style="font-weight:bold">Genre</p>
+            @foreach (var genre in Model.Genres)
+            {
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="@genre" name="genre" value="@genre">
+                    <span class="checkbox"></span>
+                    @genre
+                </label>
+                <br />
+            }
+        </div>
+
+    </div>
+
+    <div class="searchResults smoothContentEdges">
+        <div class="search-filter">
+            <label for="filter">Sorteren:</label>
+            <select id="filter" name="filter">
+                <option value="1">Geen</option>
+                <option value="2">Populariteit hoog-laag</option>
+                <option value="3">Populariteit laag-hoog</option>
+                <option value="4">Nieuw</option>
+                <option value="5">Oud</option>
+            </select>
+        </div>
+
+
+        <h2>Gevonden resultaten</h2>
+        </br>
+        <div class="searchItems">
+            @foreach (Event ev in Model.EventRepo.Events)
+            {
+                <div class="containerItem">
+                    <img class="eventImage" src="~/lib/images/test.png" />
+                    <h3>@ev.Host</h3>
+                    <p>@ev.Date.ToString("dd MMMM yyyy", new System.Globalization.CultureInfo("nl-NL"))</p>
+                </div>
+            }
+        </div>
+        </br>
+        <p class="textGreen">Geen evenementen verder gevonden</p>
+
+    </div>
+
+</div>

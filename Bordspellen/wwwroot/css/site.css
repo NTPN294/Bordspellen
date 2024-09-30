@@ -239,3 +239,88 @@ body {
         background: var(--primary-color);
         color: white;
     }
+
+/*========================================================================================*/
+.centerContent{
+    grid-column:2;
+    margin-top:50px;
+}
+
+.smoothContentEdges {
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.search {
+    display: grid;
+    grid-template-columns: 1fr .75fr 2.25fr 1fr;
+    grid-gap: 25px;
+    margin-top: 50px;
+}
+
+.searchResults {
+    grid-column: 3;
+    position: relative;
+}
+
+.searchOptions{
+    grid-column:2;
+}
+
+.searchItems{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap:25px;
+}
+
+/*========================================================================================*/
+.custom-checkbox {
+    position: relative;
+    padding-left: 30px; /* Space for the custom checkbox */
+    cursor: pointer;
+}
+
+    .custom-checkbox input {
+        display: none; /* Hide the default radio button */
+    }
+
+.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px; /* Size of the checkbox */
+    height: 20px; /* Size of the checkbox */
+    border: 2px solid var(--primary-color); /* Border color */
+    background-color: white; /* Background color */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-checkbox input:checked + .checkbox {
+    background-color: var(--primary-color); /* Background color when checked */
+    border-color: var(--primary-color); /* Change border color when checked */
+}
+
+    .custom-checkbox input:checked + .checkbox::after {
+        content: "";
+        position: absolute;
+        top: 4px; /* Adjust position for the check mark */
+        left: 8px; /* Adjust position for the check mark */
+        width: 4px; /* Width of the check mark */
+        height: 10px; /* Height of the check mark */
+        border: solid white; /* Check mark color */
+        border-width: 0 2px 2px 0; /* Make a check mark */
+        transform: rotate(45deg); /* Rotate to form a check mark */
+    }
+/*========================================================================================*/
+
+
+.search-filter {
+    position: absolute; /* Allows positioning in the search div */
+    top: 35px; /* Adjust as necessary */
+    right: 40px; /* Adjust as necessary */
+}
+
+    .search-filter label {
+        margin-right: 5px; /* Space between label and dropdown */
+    }

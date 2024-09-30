@@ -16,7 +16,7 @@
             <h2>Aankomende evenementen</h2>
             </br>
             <div class="containerItems">
-                @foreach (Event ev in Model.Events)
+                @foreach (Event ev in Model.EventRepo.Events.OrderBy(e => e.Date).Take(6))
                 {
                     <div class="containerItem">
                         <img class="eventImage" src="~/lib/images/test.png" />
@@ -37,7 +37,7 @@
                 </br>
 
                 <div class="containerPopularItems">
-                    @foreach (Event ev in Model.Events.Take(4))
+                    @foreach (Event ev in Model.EventRepo.Events.Take(4))
                     {
                         <div class="containerItem">
                             <img class="eventImage" src="~/lib/images/test.png" />
